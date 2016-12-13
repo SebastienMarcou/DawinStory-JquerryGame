@@ -5,7 +5,7 @@
 		<script src="moteur_du_jeu.js"></script>
 		<link type="text/css" rel="stylesheet" href="style.css" />
 		<meta lang="fr" xml:lang="fr" content="text/html;charset=UTF-8" http-equiv="Content-Type">
-		<title>Sword & Sorcery</title>
+		<title>Dawin Story</title>
 	</head>
 		
 	<body>
@@ -16,27 +16,40 @@
 		</div>
 	
 		<div class="section" id="intro">
-			<h2>Epic dungeon of the evil necromancer</h2>
-			En voila un jeu qu'il est bien.
+			<h2>Bienvenue au Quizz Dawin ! </h2>
+			Êtes vous un vrai DAWIN ? 
 			
 			<action name="reset"/>
 			
-			<button go="wakeUp">Commencer l'aventure !</button>
+			<button go="wakeUp">Commencer le quizz</button>
 		</div>
 	
 		
 		<div class="section" id="wakeUp">
-			Vous ouvrez les yeux... Tout est noir autour de vous...
+			Vous arrivez au département, vous commencez part ? 
 			
 			<action name="start"/>
 			
-			<button go="cavern">Se relever</button>
+			<button go="screen">Direction la salle screen</button>
+			<button go="sérieux">On prend les bonnes habitudes on va réviser.</button>
+			<button go="cavern">C'est l'heure d'un cigarrette non ? </button>
+			<button go="badmove">Vous pensez déjà à sécher les cours ?</button>
 		</div>
 	
 		
-		<div class="section" id="cavern">
+		<div class="section" id="screen">
 			Vous êtes dans une caverne sombre. La seule issue semble être
 			une porte à quelques mètres de là.
+			
+			<button go="doorLocked">Sortir</button>
+			<button go="wait">Attendre</button>
+			<button go="examine">Examiner le sol</button>
+		</div>
+
+		<div class="section" id="badmove">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis dolorem cum iure possimus, animi nisi sapiente, quibusdam, quo neque et explicabo iste alias. Saepe provident harum quasi error sequi, accusamus?
+			
+			<action name="Avertissement"/>
 			
 			<button go="doorLocked">Sortir</button>
 			<button go="wait">Attendre</button>
@@ -66,7 +79,7 @@
 			<p>Quelque chose tombe du plafond : une clé était cachée dans une
 			faille.</p>
 			
-			<action name="hit"/>
+			<action name="Avertissement"/>
 			
 			<button go="exit">Utiliser la clé et ouvrir la porte</button>
 		</div>
@@ -84,7 +97,7 @@
 			BLAM ! La porte n'a pas bougé d'un poil. Par contre, votre épaule, elle, s'est enfoncée de quelques centimètres.
 			Vous perdez 1 point de vie.
 			
-			<action name="hit"/>
+			<action name="Avertissement"/>
 			
 			<button go="hitDoor">Ré-essayer !</button>
 			<button go="cavern">Retourner sur vos pas</button>

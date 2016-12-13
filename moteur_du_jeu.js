@@ -1,11 +1,17 @@
 $( function() {
 	var buttons = $(".section button");
 	var status = $("#status");
-	var life = $("#status .life .value")
+	var life = $("#status .life .value");
 	var nbLife;
+	var action {
+		"Avertissement" : loseOneLife,
+		"start" : startGame,
+		"reset" : startGame
 
-	$(".section").hide();
-	$("#intro").show();
+	}
+
+
+	
 	startGame();
 	
 	buttons.click( function() {
@@ -13,8 +19,6 @@ $( function() {
 		console.log(a);
 		gotoSection(a);
 		
-
-
 	} );
 	
 	
@@ -36,18 +40,22 @@ $( function() {
 	}
 	
 	function loseOneLife() {
-		return nbLife-1;
-			}
+
+			return nbLife-1;
+		
+	}
 	
 	function startGame() {
+	$(".section").hide();
+	$("#intro").show();
 		setLife(3);
 		life.text(getLife());
 	}
 	
 	function endGame() {
-		if(getLife==0){
+	
 			alert("DEAD");
-		}
+	
 	}
 	
 } );
