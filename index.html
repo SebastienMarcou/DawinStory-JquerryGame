@@ -18,8 +18,6 @@
 	<div class="section" id="intro">
 		<h2>Etes-vous un DAWIN ?</h2>
 		Nous allons le voir bien vite...			
-		<action name="reset"/>
-
 		<button go="intro2">C'est parti !</button>
 	</div>
 
@@ -146,8 +144,8 @@
 			Quel appartement choisir ?
 		</p>
 		<button go="small">15 m², à 2 pas de l’IUT mais aussi grand que les toilettes chez vos grand-parents peu cher : 150€/mois</button>
-		<button go="medium">C’est un bon choix, cependant vous redoutez un peu le long trajet quotidien..</button>
-		<button go="big">Vous avez eu les yeux plus gros que le ventre…Ce sera pâtes tous les jours !</button>
+		<button go="medium">30 m², 1h de tramway de l’IUT, simple et efficace, 350€/mois</button>
+		<button go="big">60m², proche de l’IUT, 800€/mois mais vous pourrez frimer et organiser des soirées !</button>
 	</div>
 
 	<div class="section" id="small">
@@ -204,7 +202,9 @@
 		<p>
 			L'année scolaire a débuté, vous découvrez tous vos professeurs et camarades de classes. Des affinités se créent avec certaines personnes mais d'autres vous insupportent. Notamment ceux ayant la facheuse tendance à un peu trop se mettre en avant et qui ne parlent que de leur petite personne.
 		</p>
-		<button go="groupProject">...</button>
+		<action name="displayCorrectGroupOptions"></action>
+		<button id="groupChoice" go="">...</button>
+		<!-- GO inséré par jQuery -->
 	</div>
 
 	<div class="section" id="groupProjectSmall">
@@ -236,7 +236,7 @@
 			Vous avez fait un bon choix, cela sera un moyen de vous rapprocher d'elle.		
 		</p>
 		<action name="chooseGirl"></action>
-		<button go="c++">...</button>
+		<button go="cplusplus">...</button>
 	</div>
 
 	<div class="section" id="chooseGuy">
@@ -245,7 +245,7 @@
 			Mais d'un point de vu physique, vos naseaux auront une lourde charge à supporter.
 		</p>
 		<action name="chooseGuy"></action>
-		<button go="c++">...</button>
+		<button go="cplusplus">...</button>
 	</div>
 
 	<div class="section" id="chooseFriends">
@@ -253,7 +253,7 @@
 			Il va falloir motiver les troupes, mais cela devrait bien se passer vu la bonne entente qui reigne déjà entre vous.
 		</p>
 		<action name="chooseFriends"></action>
-		<button go="c++">...</button>
+		<button go="cplusplus">...</button>
 	</div>
 
 	<div class="section" id="chooseNobody">
@@ -261,10 +261,10 @@
 			Vous auriez du vous prendre en main, vous voilà avec les rejetés de tous, ceux dont personne n'a voulu. Il est trop tard pour faire marche arrière.
 		</p>
 		<action name="chooseNobody"></action>
-		<button go="c++">...</button>
+		<button go="cplusplus">...</button>
 	</div>
 
-	<div class="section" id="c++">
+	<div class="section" id="cplusplus">
 		<p>
 			C'est l'heure du cours de C++. Le professeur vient de faire une blague qui n'a pas connu un franc succès, et un malaise s'installe dans la classe.
 		</p>
@@ -278,7 +278,7 @@
 			Le professeur semble ravi que vous ayez "compris" sa blague, vous gagnez surement des points ! (+1 Note de C++)
 		</p>
 		<action name="laughWithTeacher"></action>
-		<button go="chessProject"></button>
+		<button go="chessProject">...</button>
 	</div>
 
 	<div class="section" id="laughWithFriend">
@@ -286,7 +286,7 @@
 			Le professeur vous a surpris et n'apprécie absolument pas qu'on se moque de lui. +1 Avertissement
 		</p>
 		<action name="laughWithFriend"></action>
-		<button go="chessProject"></button>
+		<button go="chessProject">...</button>
 	</div>
 
 	<div class="section" id="chessProject">
@@ -339,7 +339,7 @@
 		<button go="htmlCss">...</button>
 	</div>
 
-	<div class="section" id="iWantToCode">
+	<div class="section" id="teacherLife">
 		<p>
 			Vous limitez la casse... 5/10
 		</p>
@@ -413,16 +413,17 @@
 		<p>
 		C'est le dernier jour pour rendre le projet de C++, il vous été totalement sorti de la tête !
 		</p>
-		<action name="checkC++"></action>
-		<button go="c++Results">...</button>
+		<action name="checkCplusplus"></action>
+		<button id ="cplusplusOption" go="">...</button> 
+		<!-- GO inséré depuis jQuery -->
 	</div>
 
-	<div class="section" id="c++Done">
-		<p>Heureusement, vous vous y êtes pris en avance, et avez eu le temps de finir => 8/10</p>
+	<div class="section" id="cplusplusDone">
+		<p>Heureusement, vous vous y êtes pris en avance, et avez eu le temps de finir. Cela vaut bien 8 points</p>
 		<button go="jee">...</button>
 	</div>
 
-	<div class="section" id="c++NotDone">
+	<div class="section" id="cplusplusNotDone">
 		<p>Si seulement vous n'aviez pas repoussé le travail !</p>
 		<button go="sendItNow">Rendre le projet tel qu'il était à la fin du cours</button>
 		<button go="workAllNight">Travailler toute la nuit</button>
@@ -430,13 +431,15 @@
 
 	<div class="section" id="sendItNow">
 		<p>Evidemment, le professeur n'est pas dupe et voit que vous n'avez rien fait.
-			Cela vous vaut bien la note de 2/10
+			Cela vous vaut bien 2 points.
 		</p>
+		<action name="sendNow"></action>
 		<button go="jee">...</button>
 	</div>
 
-	<div class="section" id="c++NotDone">
-		<p>Vos efforts nocturnes vous apportent la note de 5/10, vous limitez la casse ! </p>
+	<div class="section" id="workAllNight">
+		<p>Vos efforts nocturnes vous apportent 5 points vous limitez la casse ! </p>
+		<action name="workAllNight"></action>
 		<button go="didntWakeUp">...</button>
 	</div>
 
@@ -444,32 +447,9 @@
 		<p>Le réveil sonne, il est 16h… Vous étiez trop fatigué pour entendre le réveil sonner ce matin, une absence non justifiée vous vaut 1 avertissement.
 		Demain sera un autre jour.
 		</p>
+		<action name="getOneWarning"></action>
 		<button go="jee">...</button>
 	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
 
 </body>
 
