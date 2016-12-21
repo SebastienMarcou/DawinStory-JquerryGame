@@ -87,6 +87,18 @@ $( function() {
 	laughWithFriend = false;
 	workNow = false;
 	workLater = false;
+
+	cplusplusGrade = 0;
+	ergonomyGrade = 0;
+	htmlGrade = 0;
+	jeeGrade = 0;
+	webglGrade = 0;
+	englishGrade = 0;
+	phpGrade = 0;
+	jQueryGrade = 0;
+	projectGrade = 0;
+	nbGrades = 0;
+	finalGrade = 0;
 	}
 
 		// Resume of actions
@@ -153,7 +165,7 @@ $( function() {
 		}
 
 		function playerLaughWithTeacher(){
-			cplusplusGrade = 1;
+			cplusplusGrade =  cplusplusGrade + 1;
 		}
 
 		function playerLaughWithFriend(){
@@ -169,25 +181,37 @@ $( function() {
 		}
 
 		function ergonomyBadGrade(){
-			ergonomyGrade = 2;
+			ergonomyGrade = ergonomyGrade + 2;
 		}
 
 		function ergonomyGoodGrade(){
-			ergonomyGrade = 8;
+			ergonomyGrade = ergonomyGrade + 8;
 		}
 
 		function ergonomyMediumGrade(){
-			ergonomyGrade = 5;
+			ergonomyGrade = ergonomyGrade + 5;
 		}
 
 		function checkHtml(){
+			if($('#htmlQ1:checked').attr('value') == "ok")
+				htmlGrade = htmlGrade + 2.5;
 
+			if($('#htmlQ2:checked').attr('value') == "ok")
+				htmlGrade = htmlGrade + 2.5;
+
+			if($('#htmlQ3:checked').attr('value') == "ok")
+				htmlGrade = htmlGrade + 2.5;
+
+			if($('#htmlQ4:checked').attr('value') == "ok")
+				htmlGrade = htmlGrade + 2.5;
+
+			$("#resultHTML").html("Note : " + htmlGrade + "/10");
 		}
 
 		function checkCplusplus(){
 			if(workNow){
 				$("#cplusplusOption").attr('go',"cplusplusDone");
-				cplusplusGrade = (cplusplusGrade + 8);
+				cplusplusGrade = cplusplusGrade + 8;
 			}
 			else if(workLater){
 				$("#cplusplusOption").attr('go',"cplusplusNotDone"); 
@@ -195,10 +219,10 @@ $( function() {
 		}
 
 		function cplusplusBadGrade(){
-			cplusplusGrade = (cplusplusGrade + 2);
+			cplusplusGrade = cplusplusGrade + 2;
 		}
 
 		function cplusplusMediumGrade(){
-			cplusplusGrade = (cplusplusGrade + 5);
+			cplusplusGrade = cplusplusGrade + 5;
 		}
 	} );
