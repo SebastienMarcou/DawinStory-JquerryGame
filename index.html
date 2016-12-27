@@ -395,7 +395,7 @@
 
 	<div class="section" id="submitHTML">
 		<p>
-		Vos réponses ont bien été enregistrées !
+			Vos réponses ont bien été enregistrées !
 		</p>
 		<action name="checkHTML"></action>
 		<button go="htmlResults">Voir mes résultats</button>
@@ -403,7 +403,7 @@
 
 	<div class="section" id="htmlResults">
 		<h2>
-		Voici vos résultats en HTML/CSS/JavaScript :
+			Voici vos résultats en HTML/CSS/JavaScript :
 		</h2>
 		<p id="resultHTML"></p>
 		<button go="endChessProject">...</button>
@@ -411,7 +411,7 @@
 
 	<div class="section" id="endChessProject">
 		<p>
-		C'est le dernier jour pour rendre le projet de C++, il vous été totalement sorti de la tête !
+			C'est le dernier jour pour rendre le projet de C++, il vous été totalement sorti de la tête !
 		</p>
 		<action name="checkCplusplus"></action>
 		<button id ="cplusplusOption" go="">...</button> 
@@ -445,11 +445,119 @@
 
 	<div class="section" id="didntWakeUp">
 		<p>Le réveil sonne, il est 16h… Vous étiez trop fatigué pour entendre le réveil sonner ce matin, une absence non justifiée vous vaut 1 avertissement.
-		Demain sera un autre jour.
+			Demain sera un autre jour.
 		</p>
 		<action name="getOneWarning"></action>
 		<button go="jee">...</button>
 	</div>
+
+	<div class="section" id="jee">
+		<p>Vous avez 8 heures de JEE aujourd’hui, vous décrochez à partir de la 6ème heure. Vous en avez marre de tous ces nouveaux concepts auxquels vous ne pigez rien… Soudain le professeur vous interroge mais vous n’avez rien écouté.
+			“Quelle est-donc la couche qui permet de faire cela [prenom] ?”
+		</p>
+		<button go="jeePersistence">Persistence</button>
+		<button go="jeeService">Service</button>
+		<button go="jeePresentation">Presentation</button>
+	</div>
+
+	<div class="section" id="jeePersistence">
+		<p> Dommage, vous auriez dû écouter plus attentivement
+		</p>
+		<button go="party">...</button>
+	</div>
+
+	<div class="section" id="jeeService">
+		<p> Ouf, vous avez eu de la chance, cela vous vaudra une bonne note
+		</p>
+		<button go="party">...</button>
+	</div>
+
+	<div class="section" id="jeePresentation">
+		<p> Dommage, vous auriez dû écouter plus attentivement 
+		</p>
+		<button go="party">...</button>
+	</div>
+
+	<div class="section" id="party">
+		<p> Vous avez enfin un peu de temps libre pour faire une soirée.
+		</p>
+
+		<button go="tpGlOk">Vous décidez de rester travailler chez vous pour vous avancer
+		</button>
+		<button go="tpGlNight">Vous décompressez et accepter de faire une soirée</button>
+		<button go="tpGlHangover">Vous invitez tout le monde chez vous, vous n’avez pas pris un si grand appartement pour rien après tout !</button>
+	</div>
+
+	<div class="section" id="tpGlOk">
+		<p> Aie… un TP noté de WebGL !
+			<br>
+			Heureusement que vous n’êtes pas sorti la veille !
+
+		</p>
+		<button go="dotNet">...</button>
+	</div>
+
+	<div class="section" id="tpGlNight">
+		<p>
+			Aie… un TP noté de WebGL !
+			<br>	
+			Quel mal de crâne… mais vous faites de votre mieux
+		</p>
+		<button go="dotNet">...</button>
+	</div>
+
+	<div class="section" id="tpGlHangover">
+		<p> 
+			Aie… un TP noté de WebGL !
+			<br>
+			C’est bien beau d’avoir un grand appartement pour organiser des soirée, mais vous avez passé une bonne partie de la nuit à ranger en plus de votre soirée.
+			Résultat, un TP bien loupé ! 
+		</p>
+		<button go="dotNet">...</button>
+	</div>
+
+	<div class="section" id="dotNet">
+		<p> 
+			Pendant le cours de .NET, vous montrez une image drôle à votre camarade. 
+			Le professeur vous surprend.
+		</p>
+		<button go="dotNet1">...</button>
+	</div>
+
+	<div class="section" id="dotNet1">
+		<p> 
+			 “Montrez-moi pourquoi vous rigolez, je veux rire moi aussi allez”
+		</p>
+		<button go="dotNetImg">Vous lui montrez l’image</button>
+		<button go="dotNetNothing">Vous vous excusez et ne montrez rien.</button>
+	</div>
+
+	<div class="section" id="dotNetImg">
+		<p> 
+			Le professeur vous répond : "Hmmm d’accord, je m’attendais à mieux!"
+		</p>
+		<button go="dotNetNext2">...</button>
+	</div>
+
+	<div class="section" id="dotNetNothing">
+		<p> 
+			Le professeur vous répond :
+			“Je vous ai à l’oeil !”
+		</p>
+		<button go="dotNetNext2">...</button>
+	</div>
+	
+	<div class="section" id="dotNetNext2">
+		<p> 
+			Plus tard dans le cours, vous êtes pris d’une envie pressante.
+		</p>
+		<button go="dotNetEscape">Vous vous levez discrètement pour aller aux toilettes sans déranger le cours</button>
+		<button go="dotNetNextStop">Vous interrompez le professeur et sortez de la classe</button>
+		<button go="dotNetNextOups">Vous vous faites dessus.</button>
+	</div>
+
+
+
 
 </body>
 
