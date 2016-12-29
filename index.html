@@ -526,7 +526,7 @@
 
 	<div class="section" id="dotNet1">
 		<p> 
-			 “Montrez-moi pourquoi vous rigolez, je veux rire moi aussi allez”
+			“Montrez-moi pourquoi vous rigolez, je veux rire moi aussi allez”
 		</p>
 		<button go="dotNetImg">Vous lui montrez l’image</button>
 		<button go="dotNetNothing">Vous vous excusez et ne montrez rien.</button>
@@ -555,6 +555,302 @@
 		<button go="dotNetNextStop">Vous interrompez le professeur et sortez de la classe</button>
 		<button go="dotNetNextOups">Vous vous faites dessus.</button>
 	</div>
+
+	<div class="section" id="dotNetEscape">
+		<p> 
+			“Nous mais vous allez-où comme ça ?”<br>
+			“Baah aux toilettes”<br>
+			“Euuuh.. Je ramassais mon stylo”
+
+		</p>
+		<button go="dotNetNextOups">...</button>
+	</div>
+
+	<div class="section" id="dotNetNextStop">
+		<p> 
+			Il vous laisse aller aux toilettes mais vous sentez un énervement.<br>
+			Il ne vous fera plus de cadeau...
+		</p>
+		<button go="english">...</button>
+	</div>
+
+	<div class="section" id="dotNetNextOups">
+		<p> 
+			Vous vous êtes fait dessus ! <br>
+			Nous mais vous allez bien ? Vous avez XX ans quand même ! Un tel laisser-aller vous vaudra bien un avertissement !
+		</p>
+		<button go="english">...</button>
+	</div>
+
+	<div class="section" id="english">
+		<p> 
+			Place à l’anglais, vous le sentez comment ?
+		</p>
+		<button go="englishEasy">L’anglais c’est vraiment pas un problème pour vous toute façon vous êtes déjà bilingue.</button>
+		<button go="englishOk">L’anglais c’est vraiment pas votre matière, mais bon la prof à l’air cool vous allez faire un effort</button>
+		<button go="englishAie">Vous êtes déjà content de savoir parler français, pourquoi rajouter une autre langue ? </button>
+	</div>
+
+	<div class="section" id="englishEasy">
+		<p> 
+			Attention à pas être trop sûr de soi tout de même! 
+		</p>
+		<button go="englishTest">...</button>
+	</div>
+
+	<div class="section" id="englishOk">
+		<p> 
+			Vous faites des efforts malgré la difficulté, c’est pas mal ! 
+		</p>
+		<button go="englishTest">...</button>
+	</div>
+
+	<div class="section" id="englishAie">
+		<p> 
+			Vous allez pas beaucoup progresser en anglais avec cette vision des choses .. 
+		</p>
+		<button go="englishOral">...</button>
+	</div>
+	
+	<div class="section" id="englishOral">
+		<p> 
+			Vous allez pas beaucoup progresser en anglais avec cette vision des choses .. 
+		</p>
+		<button go="englishOral5">Vous êtes fin prêt, vous savez que vous allez faire le show.</button>
+		<button go="englishOral3">Vous pensez être prêt, mais un petit blanc pendant l’exposé ne fait pas de mal.</button>
+		<button go="englishOral1">C’est la catastrophe, vous pensiez durer 10 minutes et au final cela n’a duré 4 minutes et personnes vous a écouté .. Et pourtant vous aviez votre tablette sous les yeux pour lire !</button>
+	</div>
+
+	<div class="section" id="englishOral5">
+		<p> 
+			Bien joué, vous avez fait bonne impression, la prof a aimé et on vous a applaudis!
+		</p>
+		<button go="englishTest">...</button>
+	</div>
+
+	<div class="section" id="englishOral3">
+		<p> 
+			Vous vous en êtes sortis vivant mais y’a encore du boulot !
+		</p>
+		<button go="englishTest">...</button>
+	</div>
+
+	<div class="section" id="englishOral1">
+		<p> 
+			C’est un peu la catastrophe, un début de malaise s'est installé il va falloir vous reprendre !
+		</p>
+		<button go="englishTest">...</button>
+	</div>
+
+
+	<div class="section" id="englishTest">
+		<h2>
+			L’écrit aussi est important en Anglais.
+			Traduisez les expressions suivantes :
+		</h2>
+
+
+		<form>
+			<p>
+				1) You saved all my family
+			</p>
+			<input type="radio" name="question1">Youssef vole ma femme au lit<br>
+			<input type="radio" name="question1" id="englishQ1">Vous avez sauvé toute ma famille <br>
+
+			<hr>
+
+			<p>
+				2) Are you ready ?
+			</p>
+			<input type="radio" name="question2" id="englishQ2">Etes-vous prêt ?<br>
+			<input type="radio" name="question2">Ail ou radis ?<br>
+			<hr>
+
+		</form>
+		<button go="submitEnglish">Enregistrer mes réponses</button>
+	</div>
+
+	<div class="section" id="submitEnglish">
+		<p>
+			Vos réponses ont bien été enregistrées !
+		</p>
+		<action name="checkEnglish"></action>
+		<button go="EnglishResults">Voir mes résultats</button>
+	</div>
+
+	<div class="section" id="EnglishResults">
+		<h2>
+			Voici vos résultats Anglais :
+		</h2>
+		<p id="EnglishResults"></p>
+		<button go="Php">...</button>
+	</div>
+
+	<div class="section" id="Php">
+		
+		<p>
+			Voici votre premier cours de PHP :
+		</p>
+		<button go="PhpOk">Vous savez que la matière est importante, vous y mettez toutes votre attention!</button>
+		<button go="PhpWow">Vous vous sentiez plutôt fort jusqu’au moment où le prof vous montre la solution en 3 sec pour 50 ligne de code.</button>
+		<button go="PhpMoney">Vous vous en foutez, toute façon le JEE c’est la vie et y’a plus de MONEY $$$.</button>
+	</div>
+
+	<div class="section" id="PhpOk">
+		<p>
+			Vous avez bien raison, continuez comme ça!
+		</p>
+		<button go="PhpTest">...</button>
+	</div>
+
+	<div class="section" id="PhpWow">
+		<p>Ne vous découragez pas, le prof est fort c'est normal, profitez en pour en apprendre le plus possible!</p>
+		<button go="PhpTest">...</button>
+	</div>
+
+	<div class="section" id="PhpMoney">
+		<p>
+			Vous allez pas vous faire que des copains dans ce cours..
+		</p>
+		<button go="PhpTest">...</button>
+	</div>
+
+	<div class="section" id="PhpTest">
+		<h2>
+			Place au QCM de PHP et oui il fallait bien voir ce que vous avez retenu ! 
+		</h2>
+
+
+		<form>
+			<p>
+				1) Que signifie PHP ?
+			</p>
+			<input type="radio" name="question1"> Page Helper Process<br>
+			<input type="radio" name="question1">Programming Home Pages<br>
+			<input type="radio" name="question1" id="phpQ1"> PHP: Hypertext Preprocessor <br>
+
+			<hr>
+
+			<p>
+				2) Quelle fonction retourne la longueur d'une chaîne de texte ?
+			</p>
+			<input type="radio" name="question2" id="phpQ2">strlen<br>
+			<input type="radio" name="question2">strlength<br>
+			<input type="radio" name="question2">length<br>
+			<input type="radio" name="question2">Substr<br>
+			<hr>
+
+			<p>
+				3) Comment accède-t-on au 1er élément chaton dans le tableau suivant : $tableau = Array('chaton' , 'ornithorynque', 'dauphin'); ?
+			</p>
+			<input type="radio" name="question3">$tableau[1]<br>
+			<input type="radio" name="question3" id="phpQ3"> $tableau[0]<br>
+			<input type="radio" name="question3"> $tableau{0}<br>
+			<input type="radio" name="question3"> $tableau.get(1)<br>
+			<hr>
+
+			<p>
+				4) Comment vérifie-t-on l'égalité de deux variables : $a et $b ?
+			</p>
+			<input type="radio" name="question4"> $a = $b<br>
+			<input type="radio" name="question4" id="phpQ4">$a == $b<br>
+			<input type="radio" name="question4"> $a != $b<br>
+			<input type="radio" name="question4"> if($a,$b)<br>
+			<hr>
+
+		</form>
+		<button go="submitPhp">Enregistrer mes réponses</button>
+	</div>
+
+	<div class="section" id="submitPhp">
+		<p>
+			Vos réponses ont bien été enregistrées !
+		</p>
+		<action name="checkPhp"></action>
+		<button go="PhpResults">Voir mes résultats</button>
+	</div>
+
+	<div class="section" id="PhpResults">
+		<h2>
+			Voici vos résultats du test de PHP :
+		</h2>
+		<p id="PhpResults"></p>
+		<button go="comm">...</button>
+	</div>
+
+	<div class="section" id="comm">
+
+		<p>
+			Pas le temps de respirer, vous voila en communication :
+		</p>
+		<button go="commAie">C’est quoi encore cette matière, on nous avait pas dit qu’on été la pour coder ? </button>
+		<button go="commOk">Pourquoi pas un peu de communication dans ce monde de l'informatique ça peut que nous faire du bien et nous ouvrir l’esprit.</button>
+		<button go="commWarning">Vous vous rendez compte que la prof à une voix perturbante, vous tentez donc de l'imiter en parlant baleine comme dans némo !</button>
+	</div>
+
+	<div class="section" id="commAie">
+		<p>C’est un peu radical, laisser vous au moins une chance de comprendre l’intérêt de la matière.</p>
+		<button go="technoG">...</button>
+	</div>
+
+	<div class="section" id="commOk">
+		<p>C’est bien vous commencez à être un vrai DAWIN en vous intéressant à tout.</p>
+		<button go="technoG">...</button>
+	</div>
+
+	<div class="section" id="commWarning">
+		<p> Le drame, vous l’avez bien cherché ! Tout le monde a rigolé mais la prof vous a entendu : c’est l’avertissement qui arrive ! </p>
+		<action name="getOneWarning"></action>
+		<button go="technoG">...</button>
+	</div>
+
+	<div class="section" id="technoG">
+		<p>La Techno graphiques ça donne envie non ? </p>
+		<button go="technoGSerious">Vous voulez en apprendre le plus possible dans chaque matière mais si ce n’est pas vraiment du WEB.</button>
+		<button go="technoGGame">C’est beaucoup trop dur pour vous a supporter .. vous faites comme 90% de la classe vous jouez ! </button>
+	</div>
+
+	<div class="section" id="technoGSerious">
+		<p>La mentalité est bonne mais la vous allez craquer à un moment, c’est inhumain.</p>
+		<button go="jqueryFinish">...</button>
+	</div>
+
+	<div class="section" id="technoGGame">
+		<p>Autant vous dire que pour une fois vous avez surement fait le bon choix, suivre l’ambiance de la classe c’est également important.</p>
+		<button go="jqueryFinish">...</button>
+	</div>
+
+	<div class="section" id="jqueryFinish">
+		<p> Et vous voici au dernier cours mais pas des moindres le jQuery ! 
+		</p>
+		<button go="jqueryEnd">Enfin un réel professeur de qualité, ses explications et exemples sont clairs, et vous arrivez à terminer sans problèmes les exercices !
+</button>
+		<button go="jqueryEnd">Vous êtes tristes que le professeur soit arrivé en retard… cela vous retire un peu de temps en classe que vous appréciez tant
+</button>
+		<button go="jqueryEnd">Vous avez le sourire dès que vous entrez dans la salle. Vous êtes tombés sous le charme</button>
+	</div>
+
+	<div class="section" id="jqueryEnd">
+		<p>On partage votre avis!
+		Cela mérite une très bonne note.</p>
+		<button go="projet">...</button>
+	</div>
+
+	<div class="section" id="projet">
+		<p>Les notes de votre projet de l’année sont tombées !</p>
+		<button go="projet">...</button>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
