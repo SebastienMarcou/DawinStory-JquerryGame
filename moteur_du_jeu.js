@@ -1,4 +1,22 @@
 $( function() {
+	$.fn.animateRotate = function(angle, duration, easing, complete) {
+  return this.each(function() {
+    var $elem = $(this);
+
+    $({deg: 0}).animate({deg: angle}, {
+      duration: duration,
+      easing: easing,
+      step: function(now) {
+        $elem.css({
+           transform: 'rotate(' + now + 'deg)'
+         });
+      },
+      complete: complete || $.noop
+    });
+  });
+};
+
+
 	// Variables de manipulation du DOM
 	var buttons = $(".section button");
 	var status = $("#status");
@@ -33,6 +51,7 @@ $( function() {
 	var finalGrade;
 
 	startGame();
+	showWarningAnimation();
 
 	function startGame() {
 		$(".section").hide();
@@ -62,8 +81,16 @@ $( function() {
 		nbWarnings = 0;
 	}
 
+
 	function getOneWarning() {
 		nbWarnings++;
+		showWarningAnimation();
+	}
+
+		function showWarningAnimation()
+	{
+		$("#animProf").animate({bottom: "+=110px", left: "+=110px"}, 300, 'linear').delay(2000).animate({bottom: "-=110px", left: "-=110px"}, 300, 'linear');
+		$("#animDoigt").animate({bottom: "+=160px", left: "+=110px"}, 300, 'linear').delay(2000).animate({bottom: "-=110px", left: "-=110px"}, 300, 'linear');
 	}
 
 	function looseOneWarning(){
@@ -101,30 +128,35 @@ $( function() {
 	finalGrade = 0;
 	}
 
-		// Resume of actions
-		$(".section > action[name='reset']").on("doAction", startGame);
-		$(".section > action[name='getOneWarning']").on("doAction", getOneWarning);
-		$(".section > action[name='looseOneWarning']").on("doAction", looseOneWarning);
-		$(".section > action[name='looseAllWarnings']").on("doAction", initWarnings);
-		$(".section > action[name='chooseSmall']").on("doAction", playerChooseSmallAppartment);
-		$(".section > action[name='chooseMedium']").on("doAction", playerChooseMediumAppartment);
-		$(".section > action[name='chooseBig']").on("doAction", playerChooseBigAppartment);
-		$(".section > action[name='displayCorrectGroupOptions']").on("doAction", displayCorrectGroupOptions);
-		$(".section > action[name='chooseGirl']").on("doAction", playerChooseGirl);
-		$(".section > action[name='chooseGuy']").on("doAction", playerChooseGuy);
-		$(".section > action[name='chooseFriends']").on("doAction", playerChooseFriends);
-		$(".section > action[name='chooseNobody']").on("doAction", playerChooseNobody);
-		$(".section > action[name='laughWithTeacher']").on("doAction", playerLaughWithTeacher);
-		$(".section > action[name='laughWithFriend']").on("doAction", playerLaughWithFriend);
-		$(".section > action[name='workNow']").on("doAction", playerWorkNow);
-		$(".section > action[name='workLater']").on("doAction", playerWorkLater);
-		$(".section > action[name='ergonomyBadGrade']").on("doAction", ergonomyBadGrade);
-		$(".section > action[name='ergonomyGoodGrade']").on("doAction", ergonomyGoodGrade);
-		$(".section > action[name='ergonomyMediumGrade']").on("doAction", ergonomyMediumGrade);
-		$(".section > action[name='checkHTML']").on("doAction", checkHtml);
-		$(".section > action[name='checkCplusplus']").on("doAction", checkCplusplus);
-		$(".section > action[name='sendNow']").on("doAction", cplusplusBadGrade);
-		$(".section > action[name='workAllNight']").on("doAction", cplusplusMediumGrade);
+	var actions = {
+		"reset" : startGame,
+		"getOneWarning" : getOneWarning,
+		"looseOneWarning" : looseOneWarning,
+		"looseAllWarnings" : initWarnings,
+		"chooseSmall" : playerChooseSmallAppartment,
+		"chooseMedium" : playerChooseMediumAppartment,
+		"chooseBig" : playerChooseBigAppartment,
+		"displayCorrectGroupOptions" : displayCorrectGroupOptions,
+		"chooseGirl" : playerChooseGirl,
+		"chooseGuy" : playerChooseGuy,
+		"chooseFriends" : playerChooseFriends,
+		"chooseNobody" : playerChooseNobody,
+		"laughWithTeacher" : playerLaughWithTeacher,
+		"laughWithFriend" : playerLaughWithFriend,
+		"workNow" : playerWorkNow,
+		"workLater" : playerWorkLater,
+		"ergonomyBadGrade" : ergonomyBadGrade,
+		"ergonomyGoodGrade" : ergonomyGoodGrade,
+		"ergonomyMediumGrade" : ergonomyMediumGrade,
+		"checkHTML" : checkHtml,
+		"checkCplusplus" : checkCplusplus,
+		"sendNow" : cplusplusBadGrade,
+		"workAllNight" : cplusplusMediumGrade
+	}
+
+	$(".section > action").on("doAction", function(){
+		actions[$(this).attr("name")]();
+	})
 
 		function playerChooseSmallAppartment(){
 			chooseSmallAppartment = true;
