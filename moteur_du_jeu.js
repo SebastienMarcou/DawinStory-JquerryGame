@@ -78,10 +78,6 @@ $( function() {
 		nbWarnings--;
 	}
 
-	function endGame() {
-		alert("DEAD");
-	}
-
 	function initData(){
 		
 	playerName = "";
@@ -170,6 +166,7 @@ $( function() {
 		function restart(){
 			initWarnings();
 			initData();
+			resetGrades();
 		}
 
 		function chooseName(){
@@ -393,7 +390,6 @@ $( function() {
 
 			finalGrade = finalGrade / nbGrades;
 			finalGrade = finalGrade.toFixed(2);
-			console.log(finalGrade);
 
 			if(finalGrade < 5){
 				$("#results").attr("go","bilanBad");
@@ -445,6 +441,8 @@ $( function() {
 			$("#projetGrade").html(tabGrades["projectGrade"] +"/10");
 		}
 
-
+		function resetGrades(){
+			$("table").find("td").html("");
+		}
 
 	} );
