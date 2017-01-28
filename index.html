@@ -14,11 +14,6 @@
 			Avertissements : <span class="value"></span>
 		</div>
 	</div>
-
-	<div>
-		<img id="animDoigt" src="img/doigt.png"/>
-		<img id="animProf" src="img/prof.png"/>
-	</div>
 	
 	<div class="section" id="intro">
 		<h2>Etes-vous un DAWIN ?</h2>
@@ -466,19 +461,22 @@
 	</div>
 
 	<div class="section" id="jeePersistence">
-		<p> Dommage, vous auriez dû écouter plus attentivement
+		<p> Dommage, vous auriez dû écouter plus attentivement. <br>
+			Petit 4/10 pour vous!
 		</p>
 		<button go="party">...</button>
 	</div>
 
 	<div class="section" id="jeeService">
-		<p> Ouf, vous avez eu de la chance, cela vous vaudra une bonne note
+		<p> Ouf, vous avez eu de la chance, cela vous vaudra une bonne note <br>
+			Petit 8/10 bien joué!
 		</p>
 		<button go="party">...</button>
 	</div>
 
 	<div class="section" id="jeePresentation">
-		<p> Dommage, vous auriez dû écouter plus attentivement 
+		<p> Dommage, vous auriez dû écouter plus attentivement <br>
+			Petit 4/10 pour vous!
 		</p>
 		<button go="party">...</button>
 	</div>
@@ -497,6 +495,8 @@
 		<p> Aie… un TP noté de WebGL !
 			<br>
 			Heureusement que vous n’êtes pas sorti la veille !
+			<br>
+			Vous méritez votre 8/10
 
 		</p>
 		<button go="dotNet">...</button>
@@ -506,7 +506,7 @@
 		<p>
 			Aie… un TP noté de WebGL !
 			<br>	
-			Quel mal de crâne… mais vous faites de votre mieux
+			Quel mal de crâne… mais vous faites de votre mieux, 5/10
 		</p>
 		<button go="dotNet">...</button>
 	</div>
@@ -516,7 +516,8 @@
 			Aie… un TP noté de WebGL !
 			<br>
 			C’est bien beau d’avoir un grand appartement pour organiser des soirée, mais vous avez passé une bonne partie de la nuit à ranger en plus de votre soirée.
-			Résultat, un TP bien loupé ! 
+			Résultat, un TP bien loupé ! <br>
+			Bim,2/10.. 
 		</p>
 		<button go="dotNet">...</button>
 	</div>
@@ -628,21 +629,24 @@
 
 	<div class="section" id="englishOral5">
 		<p> 
-			Bien joué, vous avez fait bonne impression, la prof a aimé et on vous a applaudis!
+			Bien joué, vous avez fait bonne impression, la prof a aimé et on vous a applaudis! <br>
+			5/5
 		</p>
 		<button go="englishTest">...</button>
 	</div>
 
 	<div class="section" id="englishOral3">
 		<p> 
-			Vous vous en êtes sortis vivant mais y’a encore du boulot !
+			Vous vous en êtes sortis vivant mais y’a encore du boulot ! <br>
+			3/5
 		</p>
 		<button go="englishTest">...</button>
 	</div>
 
 	<div class="section" id="englishOral1">
 		<p> 
-			C’est un peu la catastrophe, un début de malaise s'est installé il va falloir vous reprendre !
+			C’est un peu la catastrophe, un début de malaise s'est installé il va falloir vous reprendre ! <br>
+			1/5
 		</p>
 		<button go="englishTest">...</button>
 	</div>
@@ -829,23 +833,48 @@
 		<p> Et vous voici au dernier cours mais pas des moindres le jQuery ! 
 		</p>
 		<button go="jqueryEnd">Enfin un réel professeur de qualité, ses explications et exemples sont clairs, et vous arrivez à terminer sans problèmes les exercices !
-</button>
+		</button>
 		<button go="jqueryEnd">Vous êtes tristes que le professeur soit arrivé en retard… cela vous retire un peu de temps en classe que vous appréciez tant
-</button>
+		</button>
 		<button go="jqueryEnd">Vous avez le sourire dès que vous entrez dans la salle. Vous êtes tombés sous le charme</button>
 	</div>
 
 	<div class="section" id="jqueryEnd">
 		<p>On partage votre avis!
-		Cela mérite une très bonne note.</p>
+			Cela mérite une très bonne note. <br>
+			10/10
+		</p>
 		<button go="projet">...</button>
 	</div>
 
 	<div class="section" id="projet">
 		<p>Les notes de votre projet de l’année sont tombées !</p>
-		<button go="projet">...</button>
+		<button go="">...</button>
 	</div>
 
+	<!-- Bilan -->
+	<div class="section" id="bilanBad">
+		<p>Votre note est à l’image de votre niveau, vous avez voulu faire le malin toute l’année, privilégier le fun à l’apprentissage… <br>
+			Voilà ce que ça donne vous pouvez vous en prendre qu’à vous même. <br>
+			On est désolé mais vous ne pouvez pas être dans la famille des DAWIN. <br>
+			Revenez nous plus fort, l’espoir fait vivre.
+		</p>
+		<button go="">...</button>
+	</div>
+
+	<div class="section" id="bilanOk">
+		<p>Vous vous en êtes plutôt bien tiré, un dawin comme on en a vu beaucoup, rien d’exceptionnel mais bon on peut le dire vous avez le boulot. <br>
+			Vous êtes accepté dans la famille.
+		</p>
+		<button go="">...</button>
+	</div>
+
+	<div class="section" id="bilanGood">
+		<p> Ha la on y est ! Vous voilà parmis l’élite des DAWIN, peu de personne peuvent se vanter d’avoir réussi avec autant de talent. <br>
+			Vous avez prouver qu’il faut à la fois être sérieux, fun avec ces potes et avait montré tout l’ouverture d’esprit que ce doit d’avoir le vrai DAWIN. <br>
+			Félicitation vous êtes un vrai DAWIN !</p>
+			<button go="">...</button>
+		</div>
 
 
 
@@ -860,6 +889,7 @@
 
 
 
-</body>
 
-</html>
+	</body>
+
+	</html>
