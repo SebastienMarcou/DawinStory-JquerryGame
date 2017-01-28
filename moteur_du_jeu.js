@@ -30,6 +30,8 @@ $( function() {
 
 	startGame();
 
+	$("#englishResults").html("Note totale : " + tabGrades["englishGrade"] +"/10");
+
 	function startGame() {
 		$(".section").hide();
 		$("#intro").show();
@@ -149,7 +151,17 @@ $( function() {
 		"checkPHP" : checkPHP,
 		"jQueryGoodGrade" : jQueryGoodGrade,
 		"displayCorrectProjectOptions" : displayCorrectProjectOptions,
-		"displayCorrectResults" : displayCorrectResults
+		"displayCorrectResults" : displayCorrectResults,
+		"displayCgrade" : displayCgrade,
+		"displayErgonomygrade" : displayErgonomygrade,
+		"displayHtmlgrade" : displayHtmlgrade,
+		"displayJeegrade" : displayJeegrade,
+		"displayWebGlgrade" : displayWebGlgrade,
+		"displayEnglishgrade" : displayEnglishgrade,
+		"displayPhpgrade" : displayPhpgrade,
+		"displayJquerygrade" : displayJquerygrade,
+		"displayProjectgrade" : displayProjectgrade
+
 	}
 
 	$(".section > action").on("doAction", function(){
@@ -255,6 +267,8 @@ $( function() {
 			else if(workLater){
 				$("#cplusplusOption").attr('go',"cplusplusNotDone"); 
 			}
+
+			
 		}
 
 		function cplusplusBadGrade(){
@@ -394,4 +408,43 @@ $( function() {
 				$("#finalGrade").html("Votre moyenne générale est de " + finalGrade + "/10" );
 			}
 		}
+
+		function displayCgrade(){
+			$("#cplusplusGrade").html(tabGrades["cplusplusGrade"] +"/10");
+		}
+
+		function displayErgonomygrade(){
+			$("#ergonomyGrade").html(tabGrades["ergonomyGrade"] +"/10");
+		}
+
+		function displayHtmlgrade(){
+			$("#htmlGrade").html(tabGrades["htmlGrade"] +"/10");
+		}
+
+		function displayJeegrade(){
+			$("#jeeGrade").html(tabGrades["jeeGrade"] +"/10");
+		}
+
+		function displayWebGlgrade(){
+			$("#webglGrade").html(tabGrades["webglGrade"] +"/10");
+		}
+
+		function displayEnglishgrade(){
+			$("#anglaisGrade").html(tabGrades["englishGrade"] +"/10");
+		}
+
+		function displayPhpgrade(){
+			$("#phpGrade").html(tabGrades["phpGrade"] +"/10");
+		}
+
+		function displayJquerygrade(){
+			$("#jqueryGrade").html(tabGrades["jQueryGrade"] +"/10");
+		}
+
+		function displayProjectgrade(){
+			$("#projetGrade").html(tabGrades["projectGrade"] +"/10");
+		}
+
+
+
 	} );
