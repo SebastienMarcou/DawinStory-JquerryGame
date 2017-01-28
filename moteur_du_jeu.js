@@ -1,21 +1,4 @@
 $( function() {
-	$.fn.animateRotate = function(angle, duration, easing, complete) {
-  return this.each(function() {
-    var $elem = $(this);
-
-    $({deg: 0}).animate({deg: angle}, {
-      duration: duration,
-      easing: easing,
-      step: function(now) {
-        $elem.css({
-           transform: 'rotate(' + now + 'deg)'
-         });
-      },
-      complete: complete || $.noop
-    });
-  });
-};
-
 
 	// Variables de manipulation du DOM
 	var buttons = $(".section button");
@@ -51,7 +34,6 @@ $( function() {
 	var finalGrade;
 
 	startGame();
-	showWarningAnimation();
 
 	function startGame() {
 		$(".section").hide();
@@ -90,7 +72,6 @@ $( function() {
 		function showWarningAnimation()
 	{
 		$("#animProf").animate({bottom: "+=110px", left: "+=110px"}, 300, 'linear').delay(2000).animate({bottom: "-=110px", left: "-=110px"}, 300, 'linear');
-		$("#animDoigt").animate({bottom: "+=160px", left: "+=110px"}, 300, 'linear').delay(2000).animate({bottom: "-=110px", left: "-=110px"}, 300, 'linear');
 	}
 
 	function looseOneWarning(){
