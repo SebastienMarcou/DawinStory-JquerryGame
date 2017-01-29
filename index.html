@@ -4,8 +4,9 @@
 	<script src="jquery.js"></script>
 	<script src="moteur_du_jeu.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-	<link type="text/css" rel="stylesheet" href="style.css" />
+	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+	<link type="text/css" rel="stylesheet" href="style.css" />
 	<meta lang="fr" xml:lang="fr" content="text/html;charset=UTF-8" http-equiv="Content-Type">
 	<title>Sword & Sorcery</title>
 </head>
@@ -387,37 +388,48 @@
 					<p>
 						1) Quelle est la syntaxe pour déclarer l'encodage des caractères du document en UTF-8 ?
 					</p>
-					<input type="radio" name="htmlQuestion1">&ltmeta encoding="text/html; charset=utf-8"&gt <br>
-					<input type="radio" name="htmlQuestion1">&ltmeta charset="text/html; UTF-8"&gt <br>
-					<input type="radio" name="htmlQuestion1" id="htmlQ1" value="ok">&ltmeta charset="utf-8"&gt <br>
+					<input type="radio" name="htmlQuestion1" id="rep1">
+					<label for="rep1">&ltmeta encoding="text/html; charset=utf-8"&gt </label><br>
+					<input type="radio" name="htmlQuestion1" id="rep2">
+					<label for="rep2">&ltmeta charset="text/html; UTF-8"&gt </label><br>
+					<input type="radio" name="htmlQuestion1" id="htmlQ1" value="ok">
+					<label for="htmlQ1">&ltmeta charset="utf-8"&gt</label> <br>
 					<hr>
 
 					<p>
 						2) Quelle méthode n'existe pas dans le DOM ?
 					</p>
-					<input type="radio" name="htmlQuestion2">document.getElementsByClassName<br>
-					<input type="radio" name="htmlQuestion2">document.getElementsByTagName<br>
-					<input type="radio" name="htmlQuestion2" id="htmlQ2" value="ok">document.getElementsByAttribute<br>
-					<input type="radio" name="htmlQuestion2">document.getElementById<br>
+					<input type="radio" name="htmlQuestion2" id="q2rep1">
+					<label for="q2rep1">document.getElementsByClassName</label><br>
+					<input type="radio" name="htmlQuestion2" id="q2rep2">
+					<label for="q2rep2">document.getElementsByTagName</label><br>
+					<input type="radio" name="htmlQuestion2" id="htmlQ2" value="ok"><label for="htmlQ2">document.getElementsByAttribute</label><br>
+					<input type="radio" name="htmlQuestion2" id="q2rep4">
+					<label for="q2rep4">document.getElementById</label><br>
 					<hr>
 
 					<p>
 						3) Comment faire pour qu'une div prenne toute la largeur disponible dans son bloc conteneur ?
 					</p>
-					<input type="radio" name="htmlQuestion3">div {width: 100%; padding: 10%;} <br>
-					<input type="radio" name="htmlQuestion3">div {min-width: 100%;}<br>
-					<input type="radio" name="htmlQuestion3">div {width: 80%; padding: 10%;}<br>
-					<input type="radio" name="htmlQuestion3" id="htmlQ3" value="ok">C'est automatique, pas besoin de spécifier une largeur.<br>
+					<input type="radio" name="htmlQuestion3" id="q3rep1">
+					<label for="q3rep1">div {width: 100%; padding: 10%;}</label> <br>
+					<input type="radio" name="htmlQuestion3" id="q3rep2">
+					<label for="q3rep2">div {min-width: 100%;}</label><br>
+					<input type="radio" name="htmlQuestion3" id="q3rep3">
+					<label for="q3rep3">div {width: 80%; padding: 10%;}</label><br>
+					<input type="radio" name="htmlQuestion3" id="htmlQ3" value="ok">
+					<label for="htmlQ3">C'est automatique, pas besoin de spécifier une largeur.</label><br>
 					<hr>
 
 					<p>
 						4) Quel attribut correspond à une infobulle affichée au survol ?
 					</p>
-					<input type="radio" name="htmlQuestion4">alt<br>
-					<input type="radio" name="htmlQuestion4" id="htmlQ4" value="ok">title<br>
-					<input type="radio" name="htmlQuestion4">src<br>
-					<input type="radio" name="htmlQuestion4">desc<br>
-					<input type="radio" name="htmlQuestion4">Longdesc<br>
+					<input type="radio" name="htmlQuestion4" id="q4rep1"><label for="q4rep1">alt</label><br>
+					<input type="radio" name="htmlQuestion4" id="htmlQ4" value="ok">
+					<label for="htmlQ4">title</label><br>
+					<input type="radio" name="htmlQuestion4" id="q4rep3"><label for="q4rep3">src</label><br>
+					<input type="radio" name="htmlQuestion4" id="q4rep4"><label for="q4rep4">desc</label><br>
+					<input type="radio" name="htmlQuestion4" id="q4rep5"><label for="q4rep5">Longdesc</label><br>
 
 				</form>
 				<button go="submitHTML">Enregistrer mes réponses</button>
@@ -720,16 +732,16 @@
 					<p>
 						1) You saved all my family
 					</p>
-					<input type="radio" name="englishQuestion1" id="englishQ1" value="almostOk">Youssef vole ma femme au lit<br>
-					<input type="radio" name="englishQuestion1" id="englishQ1" value="ok">Vous avez sauvé toute ma famille <br>
+					<input type="radio" name="englishQuestion1" id="englishQ1" value="almostOk"><label for="englishQ1">Youssef vole ma femme au lit</label><br>
+					<input type="radio" name="englishQuestion1" id="englishQ1" value="ok"><label for="englishQ1">Vous avez sauvé toute ma famille</label> <br>
 
 					<hr>
 
 					<p>
 						2) Are you ready ?
 					</p>
-					<input type="radio" name="englishQuestion2" id="englishQ2" value="ok">Etes-vous prêt ?<br>
-					<input type="radio" name="englishQuestion2" id="englishQ2" value="almostOk">Ail ou radis ?<br>
+					<input type="radio" name="englishQuestion2" id="englishQ2" value="ok"><label for="englishQ2">Etes-vous prêt ?</label><br>
+					<input type="radio" name="englishQuestion2" id="englishQ2" value="almostOk"><label for="englishQ2">Ail ou radis ?</label><br>
 					<hr>
 
 				</form>
@@ -792,37 +804,37 @@
 					<p>
 						1) Que signifie PHP ?
 					</p>
-					<input type="radio" name="phpQuestion1"> Page Helper Process<br>
-					<input type="radio" name="phpQuestion1"> Programming Home Pages<br>
-					<input type="radio" name="phpQuestion1" id="phpQ1" value="ok"> Hypertext Preprocessor <br>
+					<input type="radio" name="phpQuestion1" id="php1rep1"><label for="php1rep1">Page Helper Process</label> <br>
+					<input type="radio" name="phpQuestion1" id="php1rep2"><label for="php1rep2">Programming Home Pages</label> <br>
+					<input type="radio" name="phpQuestion1" id="phpQ1" value="ok"> <label for="phpQ1">Hypertext Preprocessor</label> <br>
 
 					<hr>
 
 					<p>
 						2) Quelle fonction retourne la longueur d'une chaîne de texte ?
 					</p>
-					<input type="radio" name="phpQuestion2" id="phpQ2" value="ok">strlen<br>
-					<input type="radio" name="phpQuestion2">strlength<br>
-					<input type="radio" name="phpQuestion2">length<br>
-					<input type="radio" name="phpQuestion2">Substr<br>
+					<input type="radio" name="phpQuestion2" id="phpQ2" value="ok"><label for="phpQ2">strlen</label><br>
+					<input type="radio" name="phpQuestion2" id="php2rep2"><label for="php2rep2">strlength</label><br>
+					<input type="radio" name="phpQuestion2" id="php2rep3"><label for="php2rep3">length</label><br>
+					<input type="radio" name="phpQuestion2" id="php2rep4"><label for="php2rep4">Substr</label><br>
 					<hr>
 
 					<p>
 						3) Comment accède-t-on au 1er élément chaton dans le tableau suivant : $tableau = Array('chaton' , 'ornithorynque', 'dauphin'); ?
 					</p>
-					<input type="radio" name="phpQuestion3">$tableau[1]<br>
-					<input type="radio" name="phpQuestion3" id="phpQ3" value="ok"> $tableau[0]<br>
-					<input type="radio" name="phpQuestion3"> $tableau{0}<br>
-					<input type="radio" name="phpQuestion3"> $tableau.get(1)<br>
+					<input type="radio" name="phpQuestion3" id="php3rep1"><label for="php3rep1">$tableau[1]</label><br>
+					<input type="radio" name="phpQuestion3" id="phpQ3" value="ok"><label for="phpQ3">$tableau[0]</label> <br>
+					<input type="radio" name="phpQuestion3" id="php3rep3"><label for="php3rep3">$tableau{0}</label> <br>
+					<input type="radio" name="phpQuestion3" id="php3rep4"><label for="php3rep4">$tableau.get(1)</label> <br>
 					<hr>
 
 					<p>
 						4) Comment vérifie-t-on l'égalité de deux variables : $a et $b ?
 					</p>
-					<input type="radio" name="phpQuestion4"> $a = $b<br>
-					<input type="radio" name="phpQuestion4" id="phpQ4" value="ok">$a == $b<br>
-					<input type="radio" name="phpQuestion4"> $a != $b<br>
-					<input type="radio" name="phpQuestion4"> if($a,$b)<br>
+					<input type="radio" name="phpQuestion4" id="php4rep1"><label for="php4rep1">$a = $b</label> <br>
+					<input type="radio" name="phpQuestion4" id="phpQ4" value="ok"><label for="phpQ4">$a == $b</label><br>
+					<input type="radio" name="phpQuestion4" id="php4rep3"><label for="php4rep3">$a != $b</label> <br>
+					<input type="radio" name="phpQuestion4" id="php4rep4"><label for="php4rep4">if($a,$b)</label> <br>
 					<hr>
 
 				</form>

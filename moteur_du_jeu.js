@@ -30,7 +30,7 @@ $( function() {
 
 	startGame();
 
-	$("#englishResults").html("Note totale : " + tabGrades["englishGrade"] +"/10");
+	
 
 	function startGame() {
 		$(".section").hide();
