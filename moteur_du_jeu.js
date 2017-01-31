@@ -21,6 +21,7 @@ $( function() {
 	var workLater;
 	var showedImage;
 	var englishJokes;
+	var warningVerify;
 
 	// Variables pour les notes de chaque matière
 	var tabGrades = new Object();
@@ -30,7 +31,7 @@ $( function() {
 
 	startGame();
 
-	
+	//var saveSection = $(".section:not(:hide)");
 
 	function startGame() {
 		$(".section").hide();
@@ -63,9 +64,27 @@ $( function() {
 
 
 	function getOneWarning() {
-		nbWarnings++;
+		nbWarnings = nbWarnings +2 ;
 		showWarningAnimation();
 		warnings.text(getWarnings());
+		if(getWarnings()>=3){
+
+			var saveSection = $(".section:visible").find("button").attr("go");
+			console.log(saveSection);
+
+			gotoSection("convocationJournet");
+			
+			$("#backToSchool").attr('go', saveSection);
+			$("#backToSchoolMoney").attr('go', saveSection);
+			warningVerify = true;
+
+			if (warningVerify) {
+
+				nbWarnings = 0;
+				warnings.text(getWarnings());
+
+			}
+		}
 
 	}
 
@@ -94,6 +113,7 @@ $( function() {
 	workLater = false;
 	showedImage = false;
 	englishJokes = false;
+	warningVerify = false;
 
 	tabGrades = {"cplusplusGrade" : 0,
 			  "ergonomyGrade" : 0,
@@ -391,13 +411,17 @@ $( function() {
 			finalGrade = finalGrade / nbGrades;
 			finalGrade = finalGrade.toFixed(2);
 
+			alert(finalGrade);
+
 			if(finalGrade < 5){
 				$("#results").attr("go","bilanBad");
 				$("#finalGrade").html("Votre moyenne générale est de " + finalGrade + "/10" );
+				
+				
 			}
 			else if(finalGrade < 7){
 				$("#results").attr("go","bilanOk");
-				$("#finalGrade").html("Votre moyenne générale est de " + finalGrade + "/10" );			
+				$("#finalGrade").html("Votre moyenne générale est de " + finalGrade + "/10" );
 			}
 			else{
 				$("#results").attr("go","bilanGood");

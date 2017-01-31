@@ -4,11 +4,11 @@
 	<script src="jquery.js"></script>
 	<script src="moteur_du_jeu.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-	
+	<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT|Satisfy" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<meta lang="fr" xml:lang="fr" content="text/html;charset=UTF-8" http-equiv="Content-Type">
-	<title>Sword & Sorcery</title>
+	<title>Dawin Story</title>
 </head>
 
 <body>
@@ -732,7 +732,7 @@
 					<p>
 						1) You saved all my family
 					</p>
-					<input type="radio" name="englishQuestion1" id="englishQ1" value="almostOk"><label for="englishQ1">Youssef vole ma femme au lit</label><br>
+					<input type="radio" name="englishQuestion1" id="englishQ1rep1" value="almostOk"><label for="englishQ1rep1">Youssef vole ma femme au lit</label><br>
 					<input type="radio" name="englishQuestion1" id="englishQ1" value="ok"><label for="englishQ1">Vous avez sauvé toute ma famille</label> <br>
 
 					<hr>
@@ -741,7 +741,7 @@
 						2) Are you ready ?
 					</p>
 					<input type="radio" name="englishQuestion2" id="englishQ2" value="ok"><label for="englishQ2">Etes-vous prêt ?</label><br>
-					<input type="radio" name="englishQuestion2" id="englishQ2" value="almostOk"><label for="englishQ2">Ail ou radis ?</label><br>
+					<input type="radio" name="englishQuestion2" id="englishQ2rep2" value="almostOk"><label for="englishQ2rep2">Ail ou radis ?</label><br>
 					<hr>
 
 				</form>
@@ -978,7 +978,7 @@
 
 			<!-- Bilan -->
 			<div class="section" id="bilanBad">
-				<h2><span id=finalGrade></span></h2>
+				<h2><span id="finalGrades"></span></h2>
 				<p>Votre note est à l’image de votre niveau, vous avez voulu faire le malin toute l’année, privilégier le fun à l’apprentissage… <br>
 					Voilà ce que ça donne, vous ne pouvez vous en prendre qu’à vous même. <br>
 					On est désolé mais vous ne pouvez pas être dans la famille des DAWIN. <br>
@@ -988,7 +988,7 @@
 			</div>
 
 			<div class="section" id="bilanOk">
-				<h2><span id=finalGrade></span></h2>
+				<h2><span id="finalGrade"></span></h2>
 				<p>Vous vous en êtes plutôt bien tiré, un DAWIN comme vous on en a vu beaucoup, rien d’exceptionnel mais bon on peut le dire vous avez fait le boulot. <br>
 					Vous êtes accepté dans la famille.
 				</p>
@@ -996,69 +996,112 @@
 			</div>
 
 			<div class="section" id="bilanGood">
-				<h2><span id=finalGrade></span></h2>
-				<p> Ha la on y est ! Vous voilà parmi l’élite des DAWIN, peu de personnes peuvent se vanter d’avoir réussi avec autant de talent. <br>
+				<h2><span id="finalGrade"></span></h2>
+				<p> <h4>Ha la on y est ! Vous voilà parmi l’élite des DAWIN, peu de personnes peuvent se vanter d’avoir réussi avec autant de talent. </h4><br>
 					Vous avez prouvé qu’il faut à la fois être sérieux, fun avec ses potes et avez montré toute l’ouverture d’esprit que doit avoir un vrai DAWIN. <br>
 					Félicitation vous êtes un vrai DAWIN !</p>
 					<button go="gameOver">...</button>
 				</div>
 
-				<div class="section" id="gameOver">
-					<h2>Merci d'avoir joué ! </h2>
-					<p> Jeu réalisé par Grégory Prince et Sébastien Marcou dans le cadre du cours de jQuery<br>
-						Merci d'avoir joué, n'hésitez pas à retenter l'expérience, de nombreux scénarios sont à découvrir !
-					</p>
-					<action name="reset"></action>
-					<button go="intro">Rejouer !</button>
-				</div>
+				<div class="section" id="convocationJournet">
+					<h4> Vous voilà avec 3 avertissements ! Vous êtes convoqués chez le directeur...</h4>
+					<br>
+					Votre comportement dépasse les limites, si vous ne faites rien, je serais contraint de vous mettre à la porte ! Un si grand potentiel gâché…”
+				</p>
+				<button go="backInshcool">Veuillez m’excuser, cela n’arrivera plus… J’ai trop de pression avec cette formation, ma vie sociale est quasiment morte, je n’ai plus de temps libre, et parfois je craque.</button>
+				<button go="moneyPower">Vous déposez un billet sur le bureau</button>
+				<button go="badChoice">Foutu pour foutu, vous plongez sous le bureau</button>
+				<button go="giveUp">“Je n’en peux plus de toute manière, je ferais bien de me reconvertir en autre chose, le code c’est pas pour moi”</button>
 			</div>
-			<div class="col s4">
+
+			<div class="section" id="backInshcool">
+				<h2><span id=""></span></h2>
+				<p> Bien, c’est votre dernière chance, au prochain avertissement, c’est dehors !
+				</p>
 				
-				<div class="tabNotes">
-					<h4>Voici vos notes:</h4>
-					<table>
-						<tr>
-							<th>C++</th>
-							<td id="cplusplusGrade"></td>
-							
-						</tr>
-						<tr>
-							<th>Ergonomie</th>
-							<td id="ergonomyGrade"></td>
-						</tr>
-						<tr>
-							<th>HTML</th>
-							<td id="htmlGrade"></td>
-						</tr>
-						<tr>
-							<th>JEE</th>
-							<td id="jeeGrade"></td>
-						</tr>
-						<tr>
-							<th>WebGL</th>
-							<td id="webglGrade"></td>
-						</tr>
-						<tr>
-							<th>Anglais</th>
-							<td id="anglaisGrade"></td>
-						</tr>
-						<tr>
-							<th>PHP</th>
-							<td id="phpGrade"></td>
-						</tr>
-						<tr>
-							<th>Jquery</th>
-							<td id="jqueryGrade"></td>
-						</tr>
-						<tr>
-							<th>Projet</th>
-							<td id="projetGrade"></td>
-						</tr>
-					</table>
-					
-				</div>
+				<button id="backToSchool" go="">...</button>
+			</div>
+
+			<div class="section" id="moneyPower">
+				<h2><span id=""></span></h2>
+				<p> Mais quel superbe étudiant vous êtes, retournez donc en cours ! 
+				</p>
+				
+				<button id="backToSchoolMoney" go="">...</button>
+			</div>
+
+			<div class="section" id="badChoice">
+				<h2><span id=""></span></h2>
+				<p> Voilà une réaction un peu excessive.. Vous aurez tout le temps d’y penser depuis votre chambre d'hôpital psychiatrique.
+				</p>
+				<button go="gameOver">...</button>
+			</div>
+
+			<div class="section" id="giveUp">
+				<h2><span id=""></span></h2>
+				<p> Vous quittez le bâtiment, enfin libre de faire tout ce que vous souhaitez..
+					5 ans plus tard, vous êtes toujours au chômage et vivez chez votre mère
+
+				</p>
+				<button go="gameOver">...</button>
+			</div>
+
+			<div class="section" id="gameOver">
+				<h2>Merci d'avoir joué ! </h2>
+				<p> Jeu réalisé par Grégory Prince et Sébastien Marcou dans le cadre du cours de jQuery<br>
+					Merci d'avoir joué, n'hésitez pas à retenter l'expérience, de nombreux scénarios sont à découvrir !
+				</p>
+				<action name="reset"></action>
+				<button go="intro">Rejouer !</button>
 			</div>
 		</div>
-	</body>
+		<div class="col s4">
 
-	</html>
+			<div class="tabNotes">
+				<h4>Voici vos notes:</h4>
+				<table>
+					<tr>
+						<th>C++</th>
+						<td id="cplusplusGrade"></td>
+
+					</tr>
+					<tr>
+						<th>Ergonomie</th>
+						<td id="ergonomyGrade"></td>
+					</tr>
+					<tr>
+						<th>HTML</th>
+						<td id="htmlGrade"></td>
+					</tr>
+					<tr>
+						<th>JEE</th>
+						<td id="jeeGrade"></td>
+					</tr>
+					<tr>
+						<th>WebGL</th>
+						<td id="webglGrade"></td>
+					</tr>
+					<tr>
+						<th>Anglais</th>
+						<td id="anglaisGrade"></td>
+					</tr>
+					<tr>
+						<th>PHP</th>
+						<td id="phpGrade"></td>
+					</tr>
+					<tr>
+						<th>Jquery</th>
+						<td id="jqueryGrade"></td>
+					</tr>
+					<tr>
+						<th>Projet</th>
+						<td id="projetGrade"></td>
+					</tr>
+				</table>
+
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
